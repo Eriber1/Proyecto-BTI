@@ -11,7 +11,7 @@ function App() {
           alt="Your Company"
         />
         <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
-          Sign in to your account
+        Bienvenido
         </h2>
       </div>
 
@@ -19,7 +19,7 @@ function App() {
         <form className="space-y-6" action="#" method="POST">
           <div>
             <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
-              Email address
+              Correo
             </label>
             <div className="mt-2">
               <input
@@ -36,13 +36,8 @@ function App() {
           <div>
             <div className="flex items-center justify-between">
               <label htmlFor="password" className="block text-sm font-medium leading-6 text-gray-900">
-                Password
+                Contraseña
               </label>
-              <div className="text-sm">
-                <a href="#" className="font-semibold text-indigo-600 hover:text-indigo-500">
-                  Forgot password?
-                </a>
-              </div>
             </div>
             <div className="mt-2">
               <input
@@ -67,10 +62,7 @@ function App() {
         </form>
 
         <p className="mt-10 text-center text-sm text-gray-500">
-          Not a member?{' '}
-          <a href="#" className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">
-            Start a 14 day free trial
-          </a>
+        <div class="ab lx ze awa awe awp"><span class="alo ark axv">O Continua Con</span></div>
         </p>
       </div>
     </div>
