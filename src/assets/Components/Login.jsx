@@ -2,7 +2,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import LoginIcon from "../icons/LoginICon";
 import LoginGoogleICon from "../icons/LoginGoogleIcon";
 import { useAuth } from "../../Context/AuthContext";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,Link } from "react-router-dom";
 import LoginFacebookIcon from "../icons/LoginFacebookIcon";
 import LoginMicrosoftIcon from "../icons/LoginMicrosoftIcon";
 import LoginLinkedinIcon from "../icons/LoginLinkedinICon";
@@ -79,6 +79,10 @@ const Login = () => {
                 </div>
                 Iniciar sesión
               </button>
+              <div className="text-right text-sky-500">
+              Notienes una cuenta? 
+              <Link to="/Register"> crea una</Link> 
+              </div>
             </div>
           </form>
 
