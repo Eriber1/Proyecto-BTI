@@ -74,8 +74,8 @@ const Register = () => {
               <div className="mt-2">
                 <input
                   placeholder="Repita la Contraseña"
-                  id="password"
-                  name="password"
+                  id="password2"
+                  name="password2"
                   type="password"
                   autoComplete="current-password"
                   required
