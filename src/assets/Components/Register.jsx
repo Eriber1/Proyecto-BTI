@@ -5,7 +5,7 @@ import { useAuth } from "../../Context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import LoginFacebookIcon from "../icons/LoginFacebookIcon";
 import LoginMicrosoftIcon from "../icons/LoginMicrosoftIcon";
-import LoginLinkedinIcon from "../icons/LoginLinkedinICon";
+import LoginXIcon from "../icons/LoginXIcon";
 
 const Register = () => {
   const { loginWithGoogle,loginWithFacebook,loginWithMicrosoft } = useAuth();
@@ -125,7 +125,7 @@ const Register = () => {
             </button>
 
             <button className="bg-ligth-600 text-white py-2 px-4 rounded-md shadow-md hover:bg-blue-300 focus:outline-none focus:shadow-outline-red">
-              <LoginLinkedinIcon />
+              <LoginXIcon />
             </button>
           </div>
         </div>

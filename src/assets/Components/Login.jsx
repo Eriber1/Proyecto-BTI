@@ -2,31 +2,36 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import LoginIcon from "../icons/LoginICon";
 import LoginGoogleICon from "../icons/LoginGoogleIcon";
 import { useAuth } from "../../Context/AuthContext";
-import { useNavigate,Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import LoginFacebookIcon from "../icons/LoginFacebookIcon";
 import LoginMicrosoftIcon from "../icons/LoginMicrosoftIcon";
-import LoginLinkedinIcon from "../icons/LoginLinkedinICon";
+import LoginXIcon from "../icons/LoginXIcon";
 
 const Login = () => {
-  const { loginWithGoogle,loginWithFacebook,loginWithMicrosoft } = useAuth();
+  const { loginWithGoogle, loginWithFacebook, loginWithMicrosoft, loginWithX } = useAuth();
   const navigate = useNavigate();
 
   const handleGoogleLogin = async () => {
     await loginWithGoogle();
-    console.log(loginWithGoogle)
-    navigate("/Home")
+    navigate("/Home");
   };
 
   const handleFacebookleLogin = async () => {
     await loginWithFacebook();
-    console.log(loginWithFacebook)
-    navigate("/Home")
+    console.log(loginWithFacebook);
+    navigate("/Home");
   };
 
   const handleMicrosoftleLogin = async () => {
     await loginWithMicrosoft();
-    console.log(loginWithMicrosoft)
-    navigate("/Home")
+    console.log(loginWithMicrosoft);
+    navigate("/Home");
+  };
+
+  const handleXLogin = async () => {
+    await loginWithX();
+    console.log(loginWithX);
+    navigate("/Home");
   };
 
   return (
@@ -80,8 +85,8 @@ const Login = () => {
                 Iniciar sesión
               </button>
               <div className="text-right text-sky-500">
-              Notienes una cuenta? 
-              <Link to="/Register"> crea una</Link> 
+                Notienes una cuenta?
+                <Link to="/Register"> crea una</Link>
               </div>
             </div>
           </form>
@@ -101,20 +106,25 @@ const Login = () => {
               <LoginGoogleICon />
             </button>
 
-            <button className="bg-ligth-600 text-white py-2 px-4 rounded-md shadow-md hover:bg-blue-300 focus:outline-none focus:shadow-outline-red"
-            onClick={handleFacebookleLogin}
+            <button
+              className="bg-ligth-600 text-white py-2 px-4 rounded-md shadow-md hover:bg-blue-300 focus:outline-none focus:shadow-outline-red"
+              onClick={handleFacebookleLogin}
             >
               <LoginFacebookIcon />
             </button>
 
-            <button className="bg-ligth-600 text-white py-2 px-4 rounded-md shadow-md hover:bg-blue-300 focus:outline-none focus:shadow-outline-red"
-            onClick={handleMicrosoftleLogin}
+            <button
+              className="bg-ligth-600 text-white py-2 px-4 rounded-md shadow-md hover:bg-blue-300 focus:outline-none focus:shadow-outline-red"
+              onClick={handleMicrosoftleLogin}
             >
               <LoginMicrosoftIcon />
             </button>
 
-            <button className="bg-ligth-600 text-white py-2 px-4 rounded-md shadow-md hover:bg-blue-300 focus:outline-none focus:shadow-outline-red">
-              <LoginLinkedinIcon />
+            <button
+              className="bg-ligth-600 text-white py-2 px-4 rounded-md shadow-md hover:bg-blue-300 focus:outline-none focus:shadow-outline-red"
+              onClick={handleXLogin}
+            >
+              <LoginXIcon />
             </button>
           </div>
         </div>
