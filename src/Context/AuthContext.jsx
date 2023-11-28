@@ -5,7 +5,7 @@ import {
   OAuthProvider,
   TwitterAuthProvider,
   signInWithPopup,
-} from "firebase/auth";
+} from "firebase/auth"; 
 import { auth } from "../firebaseConfig";
 
 //este archivo sirve para dar un contexto global de si el usuario tiene su secion iniciada o no
@@ -19,16 +19,17 @@ export const useAuth = () => {
 };
 
 const loginWithGoogle = async () => {
-  const GoogleProvider = new GoogleAuthProvider();
+  const GoogleProvider = new GoogleAuthProvider(); 
   try {
     const result = await signInWithPopup(auth, GoogleProvider);
     const user = result.user;
     const email = user.email;
-    console.log(email);
+    const username = user.displayName;
+    console.log(email,username);
   } catch (error) {
     console.log(error);
   }
-};
+}; 
 
 const loginWithFacebook = () => {
   const FacebookProvider = new FacebookAuthProvider();

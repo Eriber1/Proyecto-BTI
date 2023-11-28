@@ -1,38 +1,9 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import LoginIcon from "../icons/LoginICon";
-import LoginGoogleICon from "../icons/LoginGoogleIcon";
-import { useAuth } from "../../Context/AuthContext";
-import { useNavigate, Link } from "react-router-dom";
-import LoginFacebookIcon from "../icons/LoginFacebookIcon";
-import LoginMicrosoftIcon from "../icons/LoginMicrosoftIcon";
-import LoginXIcon from "../icons/LoginXIcon";
+import { Link } from "react-router-dom";
+import ButtonsLoginsWith from "./ButtonsLoginsWith"
 
 const Login = () => {
-  const { loginWithGoogle, loginWithFacebook, loginWithMicrosoft, loginWithX } = useAuth();
-  const navigate = useNavigate();
-
-  const handleGoogleLogin = async () => {
-    await loginWithGoogle();
-    navigate("/Home");
-  };
-
-  const handleFacebookleLogin = async () => {
-    await loginWithFacebook();
-    console.log(loginWithFacebook);
-    navigate("/Home");
-  };
-
-  const handleMicrosoftleLogin = async () => {
-    await loginWithMicrosoft();
-    console.log(loginWithMicrosoft);
-    navigate("/Home");
-  };
-
-  const handleXLogin = async () => {
-    await loginWithX();
-    console.log(loginWithX);
-    navigate("/Home");
-  };
 
   return (
     <>
@@ -85,7 +56,7 @@ const Login = () => {
                 Iniciar sesión
               </button>
               <div className="text-right text-sky-500">
-                Notienes una cuenta?
+                No tienes una cuenta?
                 <Link to="/Register"> crea una</Link>
               </div>
             </div>
@@ -99,33 +70,7 @@ const Login = () => {
           <div className="mt-4"></div>
 
           <div className="flex space-x-5 mt-2 text-center text-sm justify-center">
-            <button
-              className="bg-ligth-600 text-white py-2 px-4 rounded-md shadow-md hover:bg-blue-300 focus:outline-none focus:shadow-outline-red"
-              onClick={handleGoogleLogin}
-            >
-              <LoginGoogleICon />
-            </button>
-
-            <button
-              className="bg-ligth-600 text-white py-2 px-4 rounded-md shadow-md hover:bg-blue-300 focus:outline-none focus:shadow-outline-red"
-              onClick={handleFacebookleLogin}
-            >
-              <LoginFacebookIcon />
-            </button>
-
-            <button
-              className="bg-ligth-600 text-white py-2 px-4 rounded-md shadow-md hover:bg-blue-300 focus:outline-none focus:shadow-outline-red"
-              onClick={handleMicrosoftleLogin}
-            >
-              <LoginMicrosoftIcon />
-            </button>
-
-            <button
-              className="bg-ligth-600 text-white py-2 px-4 rounded-md shadow-md hover:bg-blue-300 focus:outline-none focus:shadow-outline-red"
-              onClick={handleXLogin}
-            >
-              <LoginXIcon />
-            </button>
+          <ButtonsLoginsWith />
           </div>
         </div>
       </div>

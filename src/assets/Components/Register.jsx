@@ -1,33 +1,9 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import LoginIcon from "../icons/LoginICon";
-import LoginGoogleICon from "../icons/LoginGoogleIcon";
-import { useAuth } from "../../Context/AuthContext";
-import { useNavigate } from "react-router-dom";
-import LoginFacebookIcon from "../icons/LoginFacebookIcon";
-import LoginMicrosoftIcon from "../icons/LoginMicrosoftIcon";
-import LoginXIcon from "../icons/LoginXIcon";
+import ButtonsLoginsWith from "./ButtonsLoginsWith"
+
 
 const Register = () => {
-  const { loginWithGoogle,loginWithFacebook,loginWithMicrosoft } = useAuth();
-  const navigate = useNavigate();
-
-  const handleGoogleLogin = async () => {
-    await loginWithGoogle();
-    console.log(loginWithGoogle)
-    navigate("/Home")
-  };
-
-  const handleFacebookleLogin = async () => {
-    await loginWithFacebook();
-    console.log(loginWithFacebook)
-    navigate("/Home")
-  };
-
-  const handleMicrosoftleLogin = async () => {
-    await loginWithMicrosoft();
-    console.log(loginWithMicrosoft)
-    navigate("/Home")
-  };
 
   return (
     <>
@@ -105,28 +81,7 @@ const Register = () => {
           <div className="mt-4"></div>
 
           <div className="flex space-x-5 mt-2 text-center text-sm justify-center">
-            <button
-              className="bg-ligth-600 text-white py-2 px-4 rounded-md shadow-md hover:bg-blue-300 focus:outline-none focus:shadow-outline-red"
-              onClick={handleGoogleLogin}
-            >
-              <LoginGoogleICon />
-            </button>
-
-            <button className="bg-ligth-600 text-white py-2 px-4 rounded-md shadow-md hover:bg-blue-300 focus:outline-none focus:shadow-outline-red"
-            onClick={handleFacebookleLogin}
-            >
-              <LoginFacebookIcon />
-            </button>
-
-            <button className="bg-ligth-600 text-white py-2 px-4 rounded-md shadow-md hover:bg-blue-300 focus:outline-none focus:shadow-outline-red"
-            onClick={handleMicrosoftleLogin}
-            >
-              <LoginMicrosoftIcon />
-            </button>
-
-            <button className="bg-ligth-600 text-white py-2 px-4 rounded-md shadow-md hover:bg-blue-300 focus:outline-none focus:shadow-outline-red">
-              <LoginXIcon />
-            </button>
+           <ButtonsLoginsWith />
           </div>
         </div>
       </div>
