@@ -8,13 +8,15 @@ import Register from "./assets/Components/Register";
 //para evitar llamar AuthProvider en cada elemento, solo se llama en el archivo que contendra a todos los componentes
 function App() {
   return (
+    <div className="text-black-300 bg-gradient-to-r from-current to-blue-500 h-screen">
     <AuthProvider>
       <Routes>
+      <Route path="/home" element={<Home />} />
         <Route path="/" element={<Login />} />
-        <Route path="/home" element={<Home />} />
         <Route path="/register" element={<Register />} />
       </Routes>
     </AuthProvider>
+    </div>
   );
 }
 
