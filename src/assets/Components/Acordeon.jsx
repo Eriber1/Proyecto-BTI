@@ -5,6 +5,7 @@ import MuiAccordion from "@mui/material/Accordion";
 import MuiAccordionSummary from "@mui/material/AccordionSummary";
 import MuiAccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
+import Textadnfond from "./Textandfont";
 
 const Accordion = styled((props) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />
@@ -59,42 +60,8 @@ export default function Acordeon() {
           <Typography>Fuentes y Texto</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <div className="input-group mb-3">
-            <div className="input-group-prepend">
-              <button
-                className="btn btn-outline-secondary"
-                type="button"
-                id="button-addon1"
-              >
-                Texto
-              </button>
-            </div>
-            <input
-              type="text"
-              className="form-control"
-              placeholder=""
-              aria-label="Example text with button addon"
-              aria-describedby="button-addon1"
-            />
-          </div>
-          <div className="input-group mb-3">
-            <div className="input-group-prepend">
-              <button
-                className="btn btn-outline-secondary"
-                type="button"
-                id="button-addon1"
-              >
-                Link
-              </button>
-            </div>
-            <input
-              type="text"
-              className="form-control"
-              placeholder=""
-              aria-label="Example text with button addon"
-              aria-describedby="button-addon1"
-            />
-          </div>
+          {/* a qui impoto los botones de otro componente llamado Textandfond */}
+         <Textadnfond / >
         </AccordionDetails>
       </Accordion>
       <Accordion

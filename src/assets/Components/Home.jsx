@@ -4,15 +4,20 @@ import AddCircleIcon from "@mui/icons-material/AddCircle";
 import Acordeon from "./Acordeon";
 import Cajacodigo from "./CajaCodigo";
 import "../../Styles/Boton.css";
+import { useState } from "react";
+
 
 const Home = () => {
+
+  const [texto, setTexto] = useState ("Myboton");
+
   return (
     <>
       <div className="row">
         <div className="col-sm-8 mt-20">
           <div className=" mr-10 ml-11">
             <div className="card-body text-center">
-              <button className="bn5">Myboton</button>
+              <button className="bn5">{texto}</button>
             </div>
           </div>
         </div>
