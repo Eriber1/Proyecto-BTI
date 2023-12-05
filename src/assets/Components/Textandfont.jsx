@@ -3,8 +3,34 @@ import React, { useState } from "react";
 
 //aqui mandamos a llamar las variables desdel otro componenete
 const Textadnfond = () => {
-    
+//defino las variables que me ayudaran a detectar los cambios en el textbox que se usara
+//para cambiar el texto a los botones
+const [Text, setText] = useState("Myboton")
+const [porfileURL,setPorfileURL] = useState("#")
+//sirve para indicar si la url es valida
+const [isValidUrl, setIsValidUrl] = useState(true);
 
+
+//se usa para validar que se este ingresando una url valida define los elementos a validar
+const urlRegex = /^(http|https):\/\/(www\.)?(facebook|twitter|instagram|linkedin)\.com(\/[^ "]+)?$/;
+
+
+const hangleInputText = (event)=>{
+setText(event.target.value);
+console.log(Text)
+}
+
+const hangleInputURl = (event)=>{
+  const value = event.target.value;
+  setPorfileURL(value);
+  console.log(value)
+
+  // Validar la URL y actualizar el estado isValidUrl
+  setIsValidUrl(urlRegex.test(value) || value === '');
+  }
+
+
+//este es el del boton que se usa para cambiar las fuentes
 const [Fuente, setfuente] = useState("Arial");
 
 const hangleArial = () =>{
@@ -21,6 +47,7 @@ const hangleTime = () =>{
     
     return (
         <>
+        {/* boton que se usa para cambiar el texto del boton  */}
          <div className="input-group mb-3">
             <div className="input-group-prepend">
               <button
@@ -32,14 +59,16 @@ const hangleTime = () =>{
               </button>
             </div>
             <input
+              value={Text}
+              onChange={hangleInputText}
               type="text"
               className="form-control"
-              placeholder=""
               aria-label="Example text with button addon"
               aria-describedby="button-addon1"
             />
           </div>
 
+          {/* boton que se usa para agregar el link del perfil del usuario */}
           <div className="input-group mb-3 ">
             <div className="input-group-prepend  ">
               <button
@@ -51,12 +80,18 @@ const hangleTime = () =>{
               </button>
             </div>
             <input
-              type="text"
-              className="form-control"
-              placeholder=""
-              aria-label="Example text with button addon"
-              aria-describedby="button-addon1"
+             type="text"
+             className={`form-control ${isValidUrl ? '' : 'is-invalid'}`}
+             aria-label="Example text with button addon"
+             aria-describedby="button-addon1"
+             value={porfileURL}
+             onChange={hangleInputURl}
             />
+             {!isValidUrl && (
+        <div className="invalid-feedback">
+          Por favor, introduce una URL válida.
+        </div>
+      )}
           </div>
 
           {/* opciones para el tipo de letra */}

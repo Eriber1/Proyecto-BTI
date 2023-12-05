@@ -1,15 +1,13 @@
 import Button from "@mui/material/Button";
 import DeleteIcon from "@mui/icons-material/Delete";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
-import Acordeon from "./Acordeon";
+import Menu from "./Menu";
 import Cajacodigo from "./CajaCodigo";
-import "../../Styles/Boton.css";
-import { useState } from "react";
+import ButtonsSocial from "./ButtonsSocial";
 
 
 const Home = () => {
 
-  const [texto, setTexto] = useState ("Myboton");
 
   return (
     <>
@@ -17,7 +15,8 @@ const Home = () => {
         <div className="col-sm-8 mt-20">
           <div className=" mr-10 ml-11">
             <div className="card-body text-center">
-              <button className="bn5">{texto}</button>
+              {/* agrego los botones que se pueden modificar */}
+             <ButtonsSocial></ButtonsSocial>
             </div>
           </div>
         </div>
@@ -43,7 +42,7 @@ const Home = () => {
             </Button>
           </div>
           <div className="mr-10">
-            <Acordeon></Acordeon>
+           <Menu /> 
           </div>
         </div>
       </div>
