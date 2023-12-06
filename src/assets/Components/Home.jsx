@@ -2,7 +2,6 @@ import Button from "@mui/material/Button";
 import DeleteIcon from "@mui/icons-material/Delete";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import Menu from "./Menu";
-import Cajacodigo from "./CajaCodigo";
 import ButtonsSocial from "./ButtonsSocial";
 
 
@@ -46,10 +45,6 @@ const Home = () => {
           </div>
         </div>
       </div>
-
-      <hr className="border-danger border-2 opacity-100 mb-3 mt-3" />
-
-      <Cajacodigo />
     </>
   );
 };
