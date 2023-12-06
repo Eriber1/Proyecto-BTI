@@ -5,8 +5,7 @@ import Menu from "./Menu";
 import ButtonsSocial from "./ButtonsSocial";
 
 
-const Home = () => {
-
+const Home = (setButtonText) => {
 
   return (
     <>
@@ -15,7 +14,7 @@ const Home = () => {
           <div className=" mr-10 ml-11">
             <div className="card-body text-center">
               {/* agrego los botones que se pueden modificar */}
-             <ButtonsSocial></ButtonsSocial>
+             <ButtonsSocial setButtonText={setButtonText}></ButtonsSocial>
             </div>
           </div>
         </div>
@@ -41,7 +40,7 @@ const Home = () => {
             </Button>
           </div>
           <div className="mr-10">
-           <Menu /> 
+           <Menu setButtonText={setButtonText} /> 
           </div>
         </div>
       </div>

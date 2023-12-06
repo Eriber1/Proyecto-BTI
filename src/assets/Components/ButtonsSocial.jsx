@@ -1,23 +1,18 @@
 import "../../Styles/Boton.css";
-import Textadnfond from "./Textandfont";
+import Menu from "./Menu";
 import { useState } from "react";
 
 const ButtonsSocial = () =>{
 
-const [buttonText, setButtonText] = useState("Myboton1");
+    const changeButtonText1 = (newText) => {
+        setButtonText(newText);
+      };
 
-const changeButtonText = (newText) => {
-    setButtonText(newText);
-  };
 
+    const [buttonText, setButtonText] = useState("Myboton");
 
     return(
         <>
-         {/* Pasar la función changeButtonText a Textadnfond */}
-         <Textadnfond
-          buttonText={buttonText}
-          changeButtonText={changeButtonText}
-        />
         <div className="btn-group-vertical">
         <button className="bn5">{buttonText}</button>
         </div>
