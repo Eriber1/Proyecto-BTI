@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 
 //aqui mandamos a llamar las variables desdel otro componenete
-const Textadnfond = ({ changeButtonText }) => {
+const Textadnfond = () => {
   //defino las variables que me ayudaran a detectar los cambios en el textbox que se usara
   //para cambiar el texto a los botones
   const [Text, setText] = useState("Myboton");
@@ -17,7 +17,6 @@ const Textadnfond = ({ changeButtonText }) => {
   const hangleInputText = (event) => {
     setText(event.target.value);
     // Llamar a la función para cambiar el texto del botón en menu
-    changeButtonText(event.target.value);
   };
 
   const hangleInputURl = (event) => {

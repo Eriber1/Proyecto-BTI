@@ -7,7 +7,6 @@ import MuiAccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 import Textadnfond from "./Textandfont";
 import SelectColor from "./SelectColor";
-import { useState } from "react";
 
 const Accordion = styled((props) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />
@@ -45,16 +44,11 @@ const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
   borderTop: "1px solid rgba(0, 0, 0, .125)",
 }));
 
-export default function Menu(setButtonText) {
+export default function Menu() {
   const [expanded, setExpanded] = React.useState("panel1");
 
   //////
 
-  const [buttonText, setButtonText] = useState("Myboton");
-
-  const changeButtonText = (newText) => {
-    setButtonText(newText);
-  };
 
   /////
 
@@ -75,9 +69,7 @@ export default function Menu(setButtonText) {
           {/* a qui impoto los botones de otro componente llamado Textandfond */}
           {/* Pasar la función changeButtonText a Textadnfond */}
           <Textadnfond
-            changeButtonText={changeButtonText}
           />
-          {buttonText}
         </AccordionDetails>
       </Accordion>
       <Accordion

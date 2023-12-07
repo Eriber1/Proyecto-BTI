@@ -4,9 +4,6 @@ import { useState } from "react";
 
 const ButtonsSocial = () =>{
 
-    const changeButtonText1 = (newText) => {
-        setButtonText(newText);
-      };
 
 
     const [buttonText, setButtonText] = useState("Myboton");
