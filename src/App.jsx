@@ -4,16 +4,18 @@ import Home from "./assets/Components/Home";
 import { Routes, Route } from "react-router-dom";
 import { AuthProvider } from "./Context/AuthContext";
 import Register from "./assets/Components/Register";
+import Test from "./assets/Components/Test";
 
 //para evitar llamar AuthProvider en cada elemento, solo se llama en el archivo que contendra a todos los componentes
 function App() {
   return (
-    <div className="text-black-300 bg-gradient-to-r from-current to-blue-500 h-screen">
+    <div className="">
     <AuthProvider>
       <Routes>
       <Route path="/home" element={<Home />} />
         <Route path="/" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/Prueba" element={<Test />} />
       </Routes>
     </AuthProvider>
     </div>
