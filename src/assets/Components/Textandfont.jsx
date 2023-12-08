@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Contexto } from "../../Context/ButtonContext";
 
 
 //aqui mandamos a llamar las variables desdel otro componenete
@@ -13,16 +14,17 @@ const Textadnfond = () => {
   const urlRegex =
     /^(http|https):\/\/(www\.)?(facebook|twitter|instagram|linkedin)\.com(\/[^ "]+)?$/;
 
+    const {setbuttonText} = Contexto();
 
   const hangleInputText = (event) => {
-    setText(event.target.value);
-    // Llamar a la función para cambiar el texto del botón en menu
+    const ChangeText = event.target.value
+    setText(ChangeText);
+    setbuttonText(ChangeText);
   };
 
   const hangleInputURl = (event) => {
     const value = event.target.value;
     setPorfileURL(value);
-    console.log(value);
 
     // Validar la URL y actualizar el estado isValidUrl
     setIsValidUrl(urlRegex.test(value) || value === "");
@@ -104,19 +106,19 @@ const Textadnfond = () => {
         </button>
         <ul className="dropdown-menu">
           <li>
-            <a className="dropdown-item" onClick={hangleArial}>
+            <button className="dropdown-item" onClick={hangleArial}>
               Arial
-            </a>
+            </button>
           </li>
           <li>
-            <a className="dropdown-item" onClick={hangleImpact}>
+            <button className="dropdown-item" onClick={hangleImpact}>
               Impact
-            </a>
+            </button>
           </li>
           <li>
-            <a className="dropdown-item" onClick={hangleTime}>
+            <button className="dropdown-item" onClick={hangleTime}>
               Times New Roman
-            </a>
+            </button>
           </li>
         </ul>
       </div>

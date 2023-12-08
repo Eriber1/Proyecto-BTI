@@ -1,20 +1,30 @@
 import "../../Styles/Boton.css";
-import Menu from "./Menu";
-import { useState } from "react";
+import { Contexto } from "../../Context/ButtonContext";
+import DeleteIcon from "@mui/icons-material/Delete";
 
-const ButtonsSocial = () =>{
+const ButtonsSocial = () => {
+  const { buttonText, Buttons, DeleteButton } = Contexto();
 
+  const handleDeleteButton = (index) => {
+    DeleteButton(index);
+  };
 
+  return (
+    <>
+      <div className="btn-group-vertical">
+        {Buttons.map(index => (
+          <div key={index}>
+            <button className="bn5 m-2">
+              {buttonText}
+            </button>
+            <button onClick={() => handleDeleteButton(index)} key={`delete-${index}`}>
+            <DeleteIcon />
+            </button>
+          </div>
+        ))}
+      </div>
+    </>
+  );
+};
 
-    const [buttonText, setButtonText] = useState("Myboton");
-
-    return(
-        <>
-        <div className="btn-group-vertical">
-        <button className="bn5">{buttonText}</button>
-        </div>
-        </> 
-    )
-}
-
-export default ButtonsSocial
+export default ButtonsSocial;

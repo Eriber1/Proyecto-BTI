@@ -49,7 +49,6 @@ export default function Menu() {
 
   //////
 
-
   /////
 
   const handleChange = (panel) => (event, newExpanded) => {
@@ -68,8 +67,7 @@ export default function Menu() {
         <AccordionDetails>
           {/* a qui impoto los botones de otro componente llamado Textandfond */}
           {/* Pasar la función changeButtonText a Textadnfond */}
-          <Textadnfond
-          />
+          <Textadnfond />
         </AccordionDetails>
       </Accordion>
       <Accordion
