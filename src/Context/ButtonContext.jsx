@@ -11,24 +11,35 @@ export const Contexto = () => {
 
 // Crear el proveedor de contexto
 export const ButtonContextProvider = ({ children }) => {
-
-//texto que tendra cada boton
-  const [buttonText,setbuttonText] = useState("Myboton");
-
+  //texto que tendra cada boton
+  const [buttonText, setbuttonText] = useState("Myboton");
   //arreglo de botones
-  const [Buttons, setButtons] = useState(['']);
+  const [Buttons, setButtons] = useState([""]);
+  //color del fondo del boton
+  const [Bgcolor, setBgcolor] = useState("#000000"); // Estado para almacenar el color seleccionado
+  //color del texto del boton
+  const [TextColor, setTextColor] = useState("#FFFFFF");
 
   //funcion para agregar un boton
   const addButton = (newButton) => {
     setButtons([...Buttons, newButton]);
-  }
-  
-  const DeleteButton = (index) => {
-    const newsButtons = [...Buttons];
-    newsButtons.splice(index, 1);
-    setButtons(newsButtons);
   };
 
-
-  return <ButtonContext.Provider value={{buttonText,setbuttonText,Buttons,setButtons,addButton,DeleteButton }}>{children}</ButtonContext.Provider>;
+  return (
+    <ButtonContext.Provider
+      value={{
+        buttonText,
+        setbuttonText,
+        Buttons,
+        setButtons,
+        Bgcolor,
+        setBgcolor,
+        TextColor,
+        setTextColor,
+        addButton,
+      }}
+    >
+      {children}
+    </ButtonContext.Provider>
+  );
 };

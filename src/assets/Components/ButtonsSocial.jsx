@@ -1,24 +1,18 @@
 import "../../Styles/Boton.css";
 import { Contexto } from "../../Context/ButtonContext";
-import DeleteIcon from "@mui/icons-material/Delete";
 
 const ButtonsSocial = () => {
-  const { buttonText, Buttons, DeleteButton } = Contexto();
+  const { buttonText, Buttons,TextColor,Bgcolor } = Contexto();
 
-  const handleDeleteButton = (index) => {
-    DeleteButton(index);
-  };
+const estilo = { backgroundColor: Bgcolor, color: TextColor }
 
   return (
     <>
       <div className="btn-group-vertical">
         {Buttons.map(index => (
           <div key={index}>
-            <button className="bn5 m-2">
+            <button className="bn5 m-2" style={estilo}>
               {buttonText}
-            </button>
-            <button onClick={() => handleDeleteButton(index)} key={`delete-${index}`}>
-            <DeleteIcon />
             </button>
           </div>
         ))}

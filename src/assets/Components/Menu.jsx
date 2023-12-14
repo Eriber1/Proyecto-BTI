@@ -6,7 +6,7 @@ import MuiAccordionSummary from "@mui/material/AccordionSummary";
 import MuiAccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 import Textadnfond from "./Textandfont";
-import SelectColor from "./SelectColor";
+import ColorPicker from "./ColorPicker";
 
 const Accordion = styled((props) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />
@@ -79,7 +79,7 @@ export default function Menu() {
         </AccordionSummary>
         <AccordionDetails>
           {/* aqui agrego el componente que permite al usuario elegir un color personalizado */}
-          <SelectColor />
+          <ColorPicker />
         </AccordionDetails>
       </Accordion>
       <Accordion
