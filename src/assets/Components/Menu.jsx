@@ -7,6 +7,14 @@ import MuiAccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 import Textadnfond from "./Textandfont";
 import ColorPicker from "./ColorPicker";
+import "../../Styles/Boton.css";
+import "../../Styles/ButtonHover.css"
+import "../../Styles/Button1.css"
+import "../../Styles/ButtonGold.css"
+import "../../Styles/Button2.css"
+import "../../Styles/Button3.css"
+import "../../Styles/Button4.css"
+import "../../Styles/Button5.css"
 
 const Accordion = styled((props) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />
@@ -19,6 +27,7 @@ const Accordion = styled((props) => (
     display: "none",
   },
 }));
+
 
 const AccordionSummary = styled((props) => (
   <MuiAccordionSummary
@@ -90,12 +99,16 @@ export default function Menu() {
           <Typography>Tipos de botones</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum
-            dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada
-            lacus ex, sit amet blandit leo lobortis eget.
-          </Typography>
+          <div className="btn-group-vertical" >
+          <button className="bn5 m-2"  >Myboton</button>
+          <button className="button1 m-2" >Myboton</button>
+          <button className="box m-2">Myboton</button>
+          <button className="Btn m-2" >Myboton</button>
+          <button className="Btn2 m-2" >Myboton</button>
+          <button className="btn3 m-2" >Myboton</button>
+          <button className="btn4 m-2" >Myboton</button>
+          <button className="btn5 m-2" >Myboton</button>
+          </div>
         </AccordionDetails>
       </Accordion>
     </div>

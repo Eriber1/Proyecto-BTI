@@ -37,6 +37,7 @@ export const ButtonContextProvider = ({ children }) => {
         TextColor,
         setTextColor,
         addButton,
+    
       }}
     >
       {children}
