@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Contexto } from "../../Context/ButtonContext";
+import "../../Styles/GoogleFonts.css"
 
 
 //aqui mandamos a llamar las variables desdel otro componenete
@@ -14,7 +15,7 @@ const Textadnfond = () => {
   const urlRegex =
     /^(http|https):\/\/(www\.)?(facebook|twitter|instagram|linkedin)\.com(\/[^ "]+)?$/;
 
-    const {setbuttonText} = Contexto();
+    const {setbuttonText,setLetterfont,Letterfont,setsocialURL} = Contexto();
 
   const hangleInputText = (event) => {
     const ChangeText = event.target.value
@@ -28,22 +29,9 @@ const Textadnfond = () => {
 
     // Validar la URL y actualizar el estado isValidUrl
     setIsValidUrl(urlRegex.test(value) || value === "");
+    setsocialURL(value);
   };
 
-  //este es el del boton que se usa para cambiar las fuentes
-  const [Fuente, setfuente] = useState("Arial");
-
-  const hangleArial = () => {
-    setfuente("Arial");
-  };
-
-  const hangleImpact = () => {
-    setfuente("Impact");
-  };
-
-  const hangleTime = () => {
-    setfuente("Time New Roman");
-  };
 
   return (
     <>
@@ -98,26 +86,42 @@ const Textadnfond = () => {
       <div className="dropdown">
         <button
           className="btn btn-secondary dropdown-toggle bg-blue-400"
+          style={{fontFamily: Letterfont}}
           type="button"
           data-bs-toggle="dropdown"
           aria-expanded="false"
         >
-          {Fuente}
+          {Letterfont}
         </button>
         <ul className="dropdown-menu">
           <li>
-            <button className="dropdown-item" onClick={hangleArial}>
+            <button className="dropdown-item" style={{fontFamily: "Arial"}} onClick={() => setLetterfont("Arial")}>
               Arial
             </button>
           </li>
           <li>
-            <button className="dropdown-item" onClick={hangleImpact}>
+            <button className="dropdown-item" style={{fontFamily: "Impact"}} onClick={() => setLetterfont("Impact")}>
               Impact
             </button>
           </li>
           <li>
-            <button className="dropdown-item" onClick={hangleTime}>
+            <button className="dropdown-item" style={{fontFamily: "Times New Roman"}} onClick={() => setLetterfont("Times New Roman")}>
               Times New Roman
+            </button>
+          </li>
+          <li>
+            <button className="dropdown-item" style={{fontFamily: "Anton"}} onClick={() => setLetterfont("Anton")}>
+            Anton
+            </button>
+          </li>
+          <li>
+            <button className="dropdown-item" style={{fontFamily: "Tangerine"}} onClick={() => setLetterfont("Tangerine")}>
+            Tangerine
+            </button>
+          </li>
+          <li>
+            <button className="dropdown-item" style={{fontFamily: "Rubik Scribble"}} onClick={() => setLetterfont("Rubik Scribble")}>
+            Tangerine
             </button>
           </li>
         </ul>

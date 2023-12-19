@@ -15,6 +15,8 @@ import "../../Styles/Button2.css"
 import "../../Styles/Button3.css"
 import "../../Styles/Button4.css"
 import "../../Styles/Button5.css"
+import { Contexto } from "../../Context/ButtonContext";
+
 
 const Accordion = styled((props) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />
@@ -57,7 +59,7 @@ export default function Menu() {
   const [expanded, setExpanded] = React.useState("panel1");
 
   //////
-
+const {setestilocss} = Contexto();
   /////
 
   const handleChange = (panel) => (event, newExpanded) => {
@@ -100,14 +102,14 @@ export default function Menu() {
         </AccordionSummary>
         <AccordionDetails>
           <div className="btn-group-vertical" >
-          <button className="bn5 m-2"  >Myboton</button>
-          <button className="button1 m-2" >Myboton</button>
-          <button className="box m-2">Myboton</button>
-          <button className="Btn m-2" >Myboton</button>
-          <button className="Btn2 m-2" >Myboton</button>
-          <button className="btn3 m-2" >Myboton</button>
-          <button className="btn4 m-2" >Myboton</button>
-          <button className="btn5 m-2" >Myboton</button>
+          <button className="bn5 m-2" onClick={() => setestilocss("bn5")} >Myboton</button>
+          <button className="button1 m-2" onClick={() => setestilocss("button1")} >Myboton</button>
+          <button className="box m-2" onClick={() => setestilocss("box")}>Myboton</button>
+          <button className="Btn m-2" onClick={() => setestilocss("Btn")} >Myboton</button>
+          <button className="Btn2 m-2"  onClick={() => setestilocss("Btn2")}>Myboton</button>
+          <button className="btn3 m-2" onClick={() => setestilocss("btn3")} >Myboton</button>
+          <button className="btn4 m-2" onClick={() => setestilocss("btn4")} >Myboton</button>
+          <button className="btn5 m-2" onClick={() => setestilocss("btn5")} >Myboton</button>
           </div>
         </AccordionDetails>
       </Accordion>

@@ -19,6 +19,12 @@ export const ButtonContextProvider = ({ children }) => {
   const [Bgcolor, setBgcolor] = useState("#000000"); // Estado para almacenar el color seleccionado
   //color del texto del boton
   const [TextColor, setTextColor] = useState("#FFFFFF");
+  //para elegir los estilos
+  const [estilocss, setestilocss] = useState("bn5")
+  //estilos del tipo de letra 
+  const [Letterfont,setLetterfont] = useState("Arial");
+  //url para el boton
+  const [socialURL,setsocialURL] = useState("#")
 
   //funcion para agregar un boton
   const addButton = (newButton) => {
@@ -37,7 +43,12 @@ export const ButtonContextProvider = ({ children }) => {
         TextColor,
         setTextColor,
         addButton,
-    
+        estilocss,
+        setestilocss,
+        Letterfont,
+        setLetterfont,
+        socialURL,
+        setsocialURL
       }}
     >
       {children}
