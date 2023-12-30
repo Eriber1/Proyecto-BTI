@@ -12,6 +12,7 @@ const ColorPicker = () => {
     setTextColor(event.target.value);
   };
     
+  
     return (
       <>
         <label htmlFor="BackgroundColor">Color del Fondo: </label>
