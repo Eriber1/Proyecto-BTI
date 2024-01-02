@@ -18,19 +18,23 @@ const ButtonsSocial = () => {
   window.open(socialURL, "_blank");
  }
 
-  return (
-    <>
+ return (
+  <>
+    <div className="d-flex justify-content-center align-items-center " 
+    style={{ height: "100vh" }}>
       <div className="btn-group-vertical">
         {Buttons.map((index) => (
           <div key={index}>
             <button className={estilocss + " mt-2"} style={estilo} onClick={handleUrl}>
-             {buttonText}
+              {buttonText}
             </button>
           </div>
         ))}
       </div>
-    </>
-  );
+    </div>
+  </>
+);
+
 };
 
 export default ButtonsSocial;

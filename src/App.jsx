@@ -10,7 +10,7 @@ import ButtonsSocial from "./assets/Components/ButtonsSocial";
 
 function App() {
   return (
-    <div className="">
+    <div className="bg-gradient-to-r from-green-400 to-blue-500">
       <AuthProvider>
         <ButtonContextProvider>
           <Routes>

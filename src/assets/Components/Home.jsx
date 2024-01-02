@@ -12,24 +12,19 @@ const Home = () => {
     addButton();
   };
 
+  const borrar = () => {
+    localStorage.clear();
+  };
+
 
   return (
     <>
-      <div className="row">
-        <div className="col-sm-8 mt-20">
-          <div className=" mr-10 ml-11">
-            <div className="card-body text-center">
-              {/* agrego los botones que se pueden modificar */}
-             <ButtonsSocial></ButtonsSocial>
-            </div>
-          </div>
-        </div>
 
-        <div className="col-sm-4 ">
-          <div className="container-fluid items-center">
-            <h1>Herramientas</h1>
-            <Button
-            className="m-2"
+      <div className="row">
+        <div className="col-sm-8 mt-1">
+        <button onClick={borrar}>borrar</button>
+        <Button
+            className="m-2 align-top"
             onClick={handleaddButton}
               variant="contained"
               size="small"
@@ -37,9 +32,20 @@ const Home = () => {
             >
               Agregar
             </Button>
+
+          <div className=" mr-1 ml-11">
+            <div className="card-body">
+              {/* agrego los botones que se pueden modificar */}
+             <ButtonsSocial></ButtonsSocial>
+            </div>
           </div>
-          <div className="mr-10">
-           <Menu /> 
+        </div>
+        <div className="col-sm-4 d-flex justify-content-center align-items-center" style={{ height: "100vh" }}>
+          <div className="container-fluid items-center">
+            <label htmlFor="Herramientas" className="m-2">Herramientas</label>
+            <Menu />
+          </div>
+          <div id="Herramientas">
           </div>
         </div>
       </div>
