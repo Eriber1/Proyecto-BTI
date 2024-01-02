@@ -6,6 +6,7 @@ import { AuthProvider } from "./Context/AuthContext";
 import Register from "./assets/Components/Register";
 import Test from "./assets/Components/Test";
 import { ButtonContextProvider } from "./Context/ButtonContext";
+import ButtonsSocial from "./assets/Components/ButtonsSocial";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
             <Route path="/" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/Prueba" element={<Test />} />
+            <Route path="/boton" element={<ButtonsSocial />} />
           </Routes>
         </ButtonContextProvider>
       </AuthProvider>

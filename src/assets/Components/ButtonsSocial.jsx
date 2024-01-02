@@ -13,14 +13,19 @@ const ButtonsSocial = () => {
     fontFamily: Letterfont,
   };
 
+ const handleUrl = () => {
+  console.log(socialURL)
+  window.open(socialURL, "_blank");
+ }
+
   return (
     <>
       <div className="btn-group-vertical">
         {Buttons.map((index) => (
           <div key={index}>
-            <a className={estilocss + " mt-2"} style={estilo} href={socialURL} target="_blank">
+            <button className={estilocss + " mt-2"} style={estilo} onClick={handleUrl}>
              {buttonText}
-            </a>
+            </button>
           </div>
         ))}
       </div>

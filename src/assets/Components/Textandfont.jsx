@@ -36,18 +36,11 @@ const Textadnfond = () => {
   return (
     <>
       {/* boton que se usa para cambiar el texto del boton  */}
-      <div className="input-group mb-3">
-        <div className="input-group-prepend">
-          <button
-            className="btn btn-outline-secondary bg-blue-400"
-            type="button"
-            id="button-addon1"
-          >
-            Texto
-          </button>
-        </div>
+      <div>
+      <label htmlFor="Texto">Escribe el texto</label>
         <input
-          value={Text}
+        id="Texto"
+         placeholder="Escribe aca el texto del boton"
           onChange={hangleInputText}
           type="text"
           className="form-control"
@@ -57,22 +50,17 @@ const Textadnfond = () => {
       </div>
 
       {/* boton que se usa para agregar el link del perfil del usuario */}
-      <div className="input-group mb-3 ">
+      <div >
         <div className="input-group-prepend  ">
-          <button
-            className="btn btn-outline-secondary bg-blue-400"
-            type="button"
-            id="button-addon1"
-          >
-            Link
-          </button>
+        <label htmlFor="Link">Pon el link de tu perfil</label>
         </div>
         <input
+        id="Link"
           type="text"
           className={`form-control ${isValidUrl ? "" : "is-invalid"}`}
           aria-label="Example text with button addon"
           aria-describedby="button-addon1"
-          value={porfileURL}
+          placeholder="redes admitidas facebook|twitter|instagram|linkedin"
           onChange={hangleInputURl}
         />
         {!isValidUrl && (
@@ -83,7 +71,7 @@ const Textadnfond = () => {
       </div>
 
       {/* opciones para el tipo de letra */}
-      <div className="dropdown">
+      <div className="dropdown mt-2">
         <button
           className="btn btn-secondary dropdown-toggle bg-blue-400"
           style={{fontFamily: Letterfont}}
