@@ -39,28 +39,28 @@ const ButtonsLoginsWith = () => {
   return (
     <>
       <button
-        className="py-2 px-4 rounded-md shadow-md hover:bg-blue-300 focus:outline-none focus:shadow-outline-red"
+      className="m-2"
         onClick={handleGoogleLogin}
       >
         <LoginGoogleICon />
       </button>
 
       <button
-        className=" py-2 px-4 rounded-md shadow-md hover:bg-blue-300 focus:outline-none focus:shadow-outline-red"
+      className="m-2"
         onClick={handleFacebookleLogin}
       >
         <LoginFacebookIcon />
       </button>
 
       <button
-        className="py-2 px-4 rounded-md shadow-md hover:bg-blue-300 focus:outline-none focus:shadow-outline-red"
+      className="m-2"
         onClick={handleMicrosoftleLogin}
       >
         <LoginMicrosoftIcon />
       </button>
 
       <button
-        className=" py-2 px-4 rounded-md shadow-md hover:bg-blue-300 focus:outline-none focus:shadow-outline-red"
+      className="m-2"
         onClick={handleXLogin}
       >
         <LoginXIcon />

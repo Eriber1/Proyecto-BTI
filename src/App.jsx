@@ -4,9 +4,10 @@ import Home from "./assets/Components/Home";
 import { Routes, Route } from "react-router-dom";
 import { AuthProvider } from "./Context/AuthContext";
 import Register from "./assets/Components/Register";
-import Test from "./assets/Components/Test";
 import { ButtonContextProvider } from "./Context/ButtonContext";
 import ButtonsSocial from "./assets/Components/ButtonsSocial";
+import Llogin2 from "./assets/Components/login/Login";
+import Prueba from "./prueba/Prueba";
 
 function App() {
   return (
@@ -15,9 +16,9 @@ function App() {
         <ButtonContextProvider>
           <Routes>
             <Route path="/home" element={<Home />} />
-            <Route path="/" element={<Login />} />
+            <Route path="/" element={<Llogin2 />} />
             <Route path="/register" element={<Register />} />
-            <Route path="/Prueba" element={<Test />} />
+            <Route path="/Prueba" element={<Prueba />} />
             <Route path="/boton" element={<ButtonsSocial />} />
           </Routes>
         </ButtonContextProvider>
