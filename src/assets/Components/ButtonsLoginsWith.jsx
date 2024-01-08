@@ -20,19 +20,16 @@ const ButtonsLoginsWith = () => {
   
     const handleFacebookleLogin = async () => {
       await loginWithFacebook();
-      console.log(loginWithFacebook);
       navigate("/Home");
     };
   
     const handleMicrosoftleLogin = async () => {
       await loginWithMicrosoft();
-      console.log(loginWithMicrosoft);
       navigate("/Home");
     };
   
     const handleXLogin = async () => {
       await loginWithX();
-      console.log(loginWithX);
       navigate("/Home");
     };
 

@@ -1,13 +1,11 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import Login from "./assets/Components/Login";
 import Home from "./assets/Components/Home";
 import { Routes, Route } from "react-router-dom";
 import { AuthProvider } from "./Context/AuthContext";
-import Register from "./assets/Components/Register";
 import { ButtonContextProvider } from "./Context/ButtonContext";
 import ButtonsSocial from "./assets/Components/ButtonsSocial";
-import Llogin2 from "./assets/Components/login/Login";
-import Prueba from "./prueba/Prueba";
+import { Login } from "../src/assets/Components/login/Login";
+import Register from "./assets/Components/login/Register";
 
 function App() {
   return (
@@ -16,9 +14,8 @@ function App() {
         <ButtonContextProvider>
           <Routes>
             <Route path="/home" element={<Home />} />
-            <Route path="/" element={<Llogin2 />} />
+            <Route path="/" element={<Login />} />
             <Route path="/register" element={<Register />} />
-            <Route path="/Prueba" element={<Prueba />} />
             <Route path="/boton" element={<ButtonsSocial />} />
           </Routes>
         </ButtonContextProvider>

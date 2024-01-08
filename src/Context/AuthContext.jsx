@@ -1,68 +1,77 @@
+// Importa las funciones y clases necesarias de Firebase para la autenticación
 import { createContext, useContext } from "react";
 import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
   GoogleAuthProvider,
   FacebookAuthProvider,
   OAuthProvider,
   TwitterAuthProvider,
   signInWithPopup,
 } from "firebase/auth"; 
-import { auth } from "../firebaseConfig";
+import { auth } from "../firebaseConfig";  // Importa el objeto 'auth' configurado previamente del archivo de fire base
 
-//este archivo sirve para dar un contexto global de si el usuario tiene su secion iniciada o no
+
+// Crea un contexto para el estado de autenticación global
 export const authcontext = createContext();
-// el context permite crear un provedor de auth y debolver objetos
 
-//para evitar estar importando el archivo del contexto en cada archivo creamos un hook en donde lo unico que tendremos que llamar es la variable useAuth
+// Hook personalizado para acceder al contexto de autenticación
 export const useAuth = () => {
   const context = useContext(authcontext);
   return context;
 };
 
+// Funciones para iniciar sesión con diferentes proveedores
+const loginWithMail = (email,Password) => {  //incio de secion con correo y clave
+createUserWithEmailAndPassword(auth, email, Password)
+}
+
+const RloginWithMail = (email, password) => {
+  signInWithEmailAndPassword(auth, email, password);
+}
+
 const loginWithGoogle = async () => {
-  const GoogleProvider = new GoogleAuthProvider(); 
+  const GoogleProvider = new GoogleAuthProvider(); // Configura el proveedor de Google
   try {
     const result = await signInWithPopup(auth, GoogleProvider);
     const user = result.user;
     const email = user.email;
     const username = user.displayName;
-    console.log(email,username);
+    console.log(email, username);
   } catch (error) {
     console.log(error);
   }
 }; 
 
 const loginWithFacebook = () => {
-  const FacebookProvider = new FacebookAuthProvider();
+  const FacebookProvider = new FacebookAuthProvider(); // Configura el proveedor de Facebook
   return signInWithPopup(auth, FacebookProvider);
 };
 
 const loginWithMicrosoft = () => {
-  const Microsoftprovider = new OAuthProvider("microsoft.com");
+  const Microsoftprovider = new OAuthProvider("microsoft.com"); // Configura el proveedor de Microsoft
   return signInWithPopup(auth, Microsoftprovider);
 };
 
 const loginWithX = () => {
-  const Xprovider = new TwitterAuthProvider();
+  const Xprovider = new TwitterAuthProvider(); // Configura el proveedor de Twitter
   return signInWithPopup(auth, Xprovider);
 };
 
+// Componente proveedor de autenticación que envuelve la aplicación y proporciona el contexto
 export function AuthProvider({ children }) {
   return (
     <authcontext.Provider
-      value={{
+      value={{    // funciones que son exportadas al contexto para que todos puedan verlas
+        loginWithMail,
+        RloginWithMail,
         loginWithGoogle,
         loginWithFacebook,
         loginWithMicrosoft,
         loginWithX,
       }}
     >
-      {
-        //aca adentro iran los componentes como el login o el Home
-        //todo lo que tenga este provider los elementos hijos podran acceder a el
-        // en este caso children es el que tendra contexto y podra acceder a los componenetes
-        // del padre en este caso authcontext.provider
-      }
-      {children}
+      {children} {/* Renderiza los componentes hijos (login, home, etc.) */}
     </authcontext.Provider>
   );
 }
